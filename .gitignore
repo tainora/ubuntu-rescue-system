@@ -1,0 +1,48 @@
+# Ubuntu Rescue System .gitignore
+# Logs and temporary files
+logs/
+*.log
+*.tmp
+*.temp
+
+# VM disk images and snapshots
+vm-setup/images/*.qcow2
+vm-setup/images/*.vdi
+vm-setup/images/*.vmdk
+vm-setup/images/*.iso
+
+# Backup files
+backup-tools/**/backups/
+*.bak
+*.backup
+
+# Test artifacts
+tests/results/
+tests/output/
+
+# Configuration files with sensitive data
+config/**/secrets/
+config/**/*.key
+config/**/*.cert
+
+# Build artifacts
+build/
+dist/
+*.deb
+*.rpm
+*.tar.gz
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Thumbs.db 
