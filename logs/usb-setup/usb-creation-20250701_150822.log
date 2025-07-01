@@ -1,0 +1,122 @@
+=== Bulletproof USB Rescue System Creation ===
+Started: Tue Jul  1 03:08:22 PM PDT 2025
+Log: /home/tca/scripts/ubuntu-rescue-system/logs/usb-setup/usb-creation-20250701_150822.log
+
+🛡️ BULLETPROOF USB RESCUE SYSTEM CREATION
+==========================================
+
+⚠️  This will completely format your USB drive!
+   All existing data will be permanently lost.
+
+Continue with USB formatting? (y/N): 
+🔍 Detecting USB drives...
+   Found USB drives:
+   [1] /dev/sda (28.9G) - x5000m
+
+🎯 Auto-detected your HP x5000m USB drive:
+   Target: /dev/sda
+🛡️ Safety Check: Verifying target device...
+   ✅ Target device is safe to use
+   ✅ Confirmed USB device
+   ✅ Not a system device
+💾 Checking for data to backup...
+   ✅ No valuable user data found
+📥 Ensuring rescue tools are available...
+   ✅ Rescue tools already downloaded
+total 2.5G
+-rw-rw-r-- 1 tca tca 2.5G Dec 23  2023 boot-repair-disk-64bit.iso
+-rw-rw-r-- 1 tca tca  24M Jul 30  2024 supergrub2-2.06s4-multiarch-USB.img.zip
+🔧 Creating bulletproof partition layout...
+   Target device: /dev/sda
+   Unmounting existing partitions...
+   Creating new GPT partition table...
+   Creating partitions:
+      1. Super Grub2 Disk (500MB)
+      2. Boot-Repair-Disk (3GB)
+      3. SystemRescue (1GB - placeholder)
+      4. Clonezilla (1GB - placeholder)
+      5. Backup Storage (remaining ~23GB)
+   ✅ Partition layout created
+💿 Formatting partitions...
+   Formatting /dev/sda1 as FAT32...
+mkfs.fat 4.2 (2021-01-31)
+   Formatting /dev/sda2 as FAT32...
+mkfs.fat 4.2 (2021-01-31)
+   Formatting /dev/sda3 as FAT32...
+mkfs.fat 4.2 (2021-01-31)
+   Formatting /dev/sda4 as FAT32...
+mkfs.fat 4.2 (2021-01-31)
+   Formatting /dev/sda5 as ext4...
+mke2fs 1.47.0 (5-Feb-2023)
+Creating filesystem with 6127104 4k blocks and 1531904 inodes
+Filesystem UUID: 997d0cba-998b-4386-a6f2-d78075e9b5f2
+Superblock backups stored on blocks: 
+	32768, 98304, 163840, 229376, 294912, 819200, 884736, 1605632, 2654208, 
+	4096000
+
+Allocating group tables:   0/187       done                            
+Writing inode tables:   0/187       done                            
+Creating journal (32768 blocks): done
+Writing superblocks and filesystem accounting information:   0/187       done
+
+   ✅ All partitions formatted
+🚀 Installing rescue tools to USB partitions...
+   Installing Super Grub2 Disk...
+      Extracting Super Grub2 Disk ZIP...
+replace supergrub2-2.06s4-multiarch-USB.img? [y]es, [n]o, [A]ll, [N]one, [r]ename: find: ‘/tmp/systemd-private-34fe5394b99b4cdda1659e0479f313c0-ModemManager.service-QW3eu5’: Permission denied
+find: ‘/tmp/pulse-PKdhtXMmr18n’: Permission denied
+find: ‘/tmp/systemd-private-34fe5394b99b4cdda1659e0479f313c0-systemd-resolved.service-ZU9S55’: Permission denied
+find: ‘/tmp/systemd-private-34fe5394b99b4cdda1659e0479f313c0-polkit.service-asIz4U’: Permission denied
+find: ‘/tmp/systemd-private-34fe5394b99b4cdda1659e0479f313c0-systemd-oomd.service-SQLCKt’: Permission denied
+find: ‘/tmp/snap-private-tmp’: Permission denied
+find: ‘/tmp/systemd-private-34fe5394b99b4cdda1659e0479f313c0-prometheus.service-uM9ED3’: Permission denied
+find: ‘/tmp/systemd-private-34fe5394b99b4cdda1659e0479f313c0-systemd-logind.service-NAI2Pn’: Permission denied
+find: ‘/tmp/systemd-private-34fe5394b99b4cdda1659e0479f313c0-upower.service-GlzvPq’: Permission denied
+find: ‘/tmp/systemd-private-34fe5394b99b4cdda1659e0479f313c0-switcheroo-control.service-Qygidj’: Permission denied
+find: ‘/tmp/systemd-private-34fe5394b99b4cdda1659e0479f313c0-systemd-timesyncd.service-cfPLmC’: Permission denied
+find: ‘/tmp/systemd-private-34fe5394b99b4cdda1659e0479f313c0-power-profiles-daemon.service-VDriW3’: Permission denied
+find: ‘/tmp/systemd-private-34fe5394b99b4cdda1659e0479f313c0-colord.service-SqmW6y’: Permission denied
+      Found IMG file: supergrub2-2.06s4-multiarch-USB.img
+      ✅ Super Grub2 Disk installed
+   Installing Boot-Repair-Disk...
+      Copying Boot-Repair-Disk ISO (2.5GB)...
+      ✅ Boot-Repair-Disk installed
+   Setting up placeholder partitions...
+   Setting up backup partition...
+   ✅ All rescue tools installed
+✅ Verifying USB rescue system...
+   Partition layout:
+NAME   MAJ:MIN RM  SIZE RO TYPE MOUNTPOINTS
+sda      8:0    1 28.9G  0 disk 
+├─sda1   8:1    1  512M  0 part 
+├─sda2   8:2    1    3G  0 part 
+├─sda3   8:3    1    1G  0 part 
+├─sda4   8:4    1    1G  0 part 
+└─sda5   8:5    1 23.4G  0 part 
+
+   Partition details:
+Model: hp x5000m (scsi)
+Disk /dev/sda: 31.0GB
+Sector size (logical/physical): 512B/512B
+Partition Table: gpt
+Disk Flags: 
+
+Number  Start   End     Size    File system  Name     Flags
+ 1      1049kB  538MB   537MB   fat32        primary  boot, esp
+ 2      538MB   3759MB  3221MB  fat32        primary  msftdata
+ 3      3759MB  4833MB  1074MB  fat32        primary  msftdata
+ 4      4833MB  5907MB  1074MB  fat32        primary  msftdata
+ 5      5907MB  31.0GB  25.1GB  ext4         primary
+
+
+   ✅ USB rescue system creation completed successfully!
+   📁 Device: /dev/sda
+   🚀 Ready for dry-run testing
+
+🎉 SUCCESS: Bulletproof USB rescue system created!
+📋 Next steps:
+   1. Run: ./test-recovery.sh
+   2. Test boot from USB (dry-run)
+   3. Verify all rescue tools work
+
+Completed: Tue Jul  1 03:19:33 PM PDT 2025

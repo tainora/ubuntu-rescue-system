@@ -1,7 +1,5 @@
 # Ubuntu Rescue System .gitignore
-# Logs and temporary files
-logs/
-*.log
+# Temporary files only
 *.tmp
 *.temp
 
@@ -16,7 +14,7 @@ backup-tools/**/backups/
 *.bak
 *.backup
 
-# Test artifacts
+# Test artifacts (but keep logs that show successful testing)
 tests/results/
 tests/output/
 

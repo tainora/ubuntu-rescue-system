@@ -1,0 +1,71 @@
+=== Bulletproof USB Rescue System Creation ===
+Started: Tue Jul  1 03:00:11 PM PDT 2025
+Log: /home/tca/scripts/ubuntu-rescue-system/logs/usb-setup/usb-creation-20250701_150011.log
+
+🛡️ BULLETPROOF USB RESCUE SYSTEM CREATION
+==========================================
+
+⚠️  This will completely format your USB drive!
+   All existing data will be permanently lost.
+
+Continue with USB formatting? (y/N): 
+🔍 Detecting USB drives...
+   Found USB drives:
+   [1] /dev/sda (28.9G) - x5000m
+
+🎯 Auto-detected your HP x5000m USB drive:
+   Target: /dev/sda
+🛡️ Safety Check: Verifying target device...
+   ✅ Target device is safe to use
+   ✅ Confirmed USB device
+   ✅ Not a system device
+💾 Checking for data to backup...
+   📋 Found potentially valuable data:
+      - binance_raw_trade_data (131M)
+
+   💡 Backup this data before formatting? (y/N): 
+   ⚠️  Skipping backup - data will be lost
+📥 Ensuring rescue tools are available...
+   ✅ Rescue tools already downloaded
+total 2.5G
+-rw-rw-r-- 1 tca tca 2.5G Dec 23  2023 boot-repair-disk-64bit.iso
+-rw-rw-r-- 1 tca tca  24M Jul 30  2024 supergrub2-2.06s4-multiarch-USB.img.zip
+🔧 Creating bulletproof partition layout...
+   Target device: /dev/sda
+   Unmounting existing partitions...
+   Creating new GPT partition table...
+   Creating partitions:
+      1. Super Grub2 Disk (1GB)
+      2. Boot-Repair-Disk (1GB)
+      3. SystemRescue (1GB)
+      4. Clonezilla (1GB)
+      5. Backup Storage (remaining ~25GB)
+   ✅ Partition layout created
+💿 Formatting partitions...
+   Formatting /dev/sda1 as FAT32...
+mkfs.fat 4.2 (2021-01-31)
+   Formatting /dev/sda2 as FAT32...
+mkfs.fat 4.2 (2021-01-31)
+   Formatting /dev/sda3 as FAT32...
+mkfs.fat 4.2 (2021-01-31)
+   Formatting /dev/sda4 as FAT32...
+mkfs.fat 4.2 (2021-01-31)
+   Formatting /dev/sda5 as ext4...
+mke2fs 1.47.0 (5-Feb-2023)
+Creating filesystem with 6520320 4k blocks and 1630208 inodes
+Filesystem UUID: 32bf4b59-4ede-4906-aa83-e2012e4b49c2
+Superblock backups stored on blocks: 
+	32768, 98304, 163840, 229376, 294912, 819200, 884736, 1605632, 2654208, 
+	4096000
+
+Allocating group tables:   0/199       done                            
+Writing inode tables:   0/199       done                            
+Creating journal (32768 blocks): done
+Writing superblocks and filesystem accounting information:   0/199       done
+
+   ✅ All partitions formatted
+🚀 Installing rescue tools to USB partitions...
+   Installing Super Grub2 Disk...
+      ⚠️  Super Grub2 Disk ISO not found, skipping
+   Installing Boot-Repair-Disk...
+cp: error writing '/tmp/usb-rescue-mount/boot-repair-disk-64bit.iso': No space left on device

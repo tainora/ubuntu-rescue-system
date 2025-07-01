@@ -1,0 +1,83 @@
+=== Bulletproof USB Rescue System Creation ===
+Started: Tue Jul  1 03:05:56 PM PDT 2025
+Log: /home/tca/scripts/ubuntu-rescue-system/logs/usb-setup/usb-creation-20250701_150556.log
+
+🛡️ BULLETPROOF USB RESCUE SYSTEM CREATION
+==========================================
+
+⚠️  This will completely format your USB drive!
+   All existing data will be permanently lost.
+
+Continue with USB formatting? (y/N): 
+🔍 Detecting USB drives...
+   Found USB drives:
+   [1] /dev/sda (28.9G) - x5000m
+
+🎯 Auto-detected your HP x5000m USB drive:
+   Target: /dev/sda
+🛡️ Safety Check: Verifying target device...
+   ✅ Target device is safe to use
+   ✅ Confirmed USB device
+   ✅ Not a system device
+💾 Checking for data to backup...
+   USB not mounted, attempting to mount...
+   ✅ Mounted at /tmp/usb-backup-mount
+   ✅ No valuable user data found
+📥 Ensuring rescue tools are available...
+   ✅ Rescue tools already downloaded
+total 2.5G
+-rw-rw-r-- 1 tca tca 2.5G Dec 23  2023 boot-repair-disk-64bit.iso
+-rw-rw-r-- 1 tca tca  24M Jul 30  2024 supergrub2-2.06s4-multiarch-USB.img.zip
+🔧 Creating bulletproof partition layout...
+   Target device: /dev/sda
+   Unmounting existing partitions...
+   Creating new GPT partition table...
+   Creating partitions:
+      1. Super Grub2 Disk (500MB)
+      2. Boot-Repair-Disk (3GB)
+      3. SystemRescue (1GB - placeholder)
+      4. Clonezilla (1GB - placeholder)
+      5. Backup Storage (remaining ~23GB)
+   ✅ Partition layout created
+💿 Formatting partitions...
+   Formatting /dev/sda1 as FAT32...
+mkfs.fat 4.2 (2021-01-31)
+   Formatting /dev/sda2 as FAT32...
+mkfs.fat 4.2 (2021-01-31)
+   Formatting /dev/sda3 as FAT32...
+mkfs.fat 4.2 (2021-01-31)
+   Formatting /dev/sda4 as FAT32...
+mkfs.fat 4.2 (2021-01-31)
+   Formatting /dev/sda5 as ext4...
+mke2fs 1.47.0 (5-Feb-2023)
+Creating filesystem with 6127104 4k blocks and 1531904 inodes
+Filesystem UUID: d0c6db66-03da-4f19-ad53-46861f45cbf5
+Superblock backups stored on blocks: 
+	32768, 98304, 163840, 229376, 294912, 819200, 884736, 1605632, 2654208, 
+	4096000
+
+Allocating group tables:   0/187       done                            
+Writing inode tables:   0/187       done                            
+Creating journal (32768 blocks): done
+Writing superblocks and filesystem accounting information:   0/187       done
+
+   ✅ All partitions formatted
+🚀 Installing rescue tools to USB partitions...
+   Installing Super Grub2 Disk...
+      Extracting Super Grub2 Disk ZIP...
+find: ‘/tmp/systemd-private-34fe5394b99b4cdda1659e0479f313c0-ModemManager.service-QW3eu5’: Permission denied
+find: ‘/tmp/pulse-PKdhtXMmr18n’: Permission denied
+find: ‘/tmp/systemd-private-34fe5394b99b4cdda1659e0479f313c0-systemd-resolved.service-ZU9S55’: Permission denied
+find: ‘/tmp/systemd-private-34fe5394b99b4cdda1659e0479f313c0-polkit.service-asIz4U’: Permission denied
+find: ‘/tmp/systemd-private-34fe5394b99b4cdda1659e0479f313c0-systemd-oomd.service-SQLCKt’: Permission denied
+find: ‘/tmp/snap-private-tmp’: Permission denied
+find: ‘/tmp/systemd-private-34fe5394b99b4cdda1659e0479f313c0-prometheus.service-uM9ED3’: Permission denied
+find: ‘/tmp/systemd-private-34fe5394b99b4cdda1659e0479f313c0-systemd-logind.service-NAI2Pn’: Permission denied
+find: ‘/tmp/systemd-private-34fe5394b99b4cdda1659e0479f313c0-upower.service-GlzvPq’: Permission denied
+find: ‘/tmp/systemd-private-34fe5394b99b4cdda1659e0479f313c0-switcheroo-control.service-Qygidj’: Permission denied
+find: ‘/tmp/systemd-private-34fe5394b99b4cdda1659e0479f313c0-systemd-timesyncd.service-cfPLmC’: Permission denied
+find: ‘/tmp/systemd-private-34fe5394b99b4cdda1659e0479f313c0-power-profiles-daemon.service-VDriW3’: Permission denied
+find: ‘/tmp/systemd-private-34fe5394b99b4cdda1659e0479f313c0-colord.service-SqmW6y’: Permission denied
+      Found IMG file: supergrub2-2.06s4-multiarch-USB.img
+mount: /tmp/sg2d_mount: wrong fs type, bad option, bad superblock on /dev/loop26, missing codepage or helper program, or other error.
+       dmesg(1) may have more information after failed mount system call.

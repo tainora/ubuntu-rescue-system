@@ -1,0 +1,46 @@
+=== Downloading Bulletproof Rescue Tools ===
+Download Directory: /home/tca/scripts/ubuntu-rescue-system/tools/downloads
+Started: Tue Jul  1 02:59:53 PM PDT 2025
+
+🛡️ Super Grub2 Disk 2.06s4 (SecureBoot compatible)
+📥 Downloading Super Grub2 Disk...
+   🌐 URL: https://sourceforge.net/projects/supergrub2/files/2.06s4/super_grub2_disk_2.06s4/supergrub2-2.06s4-multiarch-USB.img.zip/download
+--2025-07-01 14:59:53--  https://sourceforge.net/projects/supergrub2/files/2.06s4/super_grub2_disk_2.06s4/supergrub2-2.06s4-multiarch-USB.img.zip/download
+Resolving sourceforge.net (sourceforge.net)... 104.18.13.149, 104.18.12.149, 2606:4700::6812:c95, ...
+Connecting to sourceforge.net (sourceforge.net)|104.18.13.149|:443... connected.
+HTTP request sent, awaiting response... 302 Found
+Location: https://downloads.sourceforge.net/project/supergrub2/2.06s4/super_grub2_disk_2.06s4/supergrub2-2.06s4-multiarch-USB.img.zip?ts=gAAAAABoZFpZlRgPxHsFrmwNO0d23nbpntUwCBUwNKi0tY5cMPZzHM1AebURCLVBB6cCy0FE9k7tqpQYqi5G-FagcrrZKn1ZFA%3D%3D&use_mirror=gigenet&r= [following]
+--2025-07-01 14:59:53--  https://downloads.sourceforge.net/project/supergrub2/2.06s4/super_grub2_disk_2.06s4/supergrub2-2.06s4-multiarch-USB.img.zip?ts=gAAAAABoZFpZlRgPxHsFrmwNO0d23nbpntUwCBUwNKi0tY5cMPZzHM1AebURCLVBB6cCy0FE9k7tqpQYqi5G-FagcrrZKn1ZFA%3D%3D&use_mirror=gigenet&r=
+Resolving downloads.sourceforge.net (downloads.sourceforge.net)... 104.18.12.149, 104.18.13.149, 2606:4700::6812:d95, ...
+Connecting to downloads.sourceforge.net (downloads.sourceforge.net)|104.18.12.149|:443... connected.
+HTTP request sent, awaiting response... 302 Found
+Location: https://gigenet.dl.sourceforge.net/project/supergrub2/2.06s4/super_grub2_disk_2.06s4/supergrub2-2.06s4-multiarch-USB.img.zip?viasf=1 [following]
+--2025-07-01 14:59:54--  https://gigenet.dl.sourceforge.net/project/supergrub2/2.06s4/super_grub2_disk_2.06s4/supergrub2-2.06s4-multiarch-USB.img.zip?viasf=1
+Resolving gigenet.dl.sourceforge.net (gigenet.dl.sourceforge.net)... 69.65.16.141
+Connecting to gigenet.dl.sourceforge.net (gigenet.dl.sourceforge.net)|69.65.16.141|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 24206301 (23M) [application/octet-stream]
+Saving to: ‘/home/tca/scripts/ubuntu-rescue-system/tools/downloads/supergrub2-2.06s4-multiarch-USB.img.zip’
+
+          /home/tca   0%[                    ]       0  --.-KB/s                        /home/tca/   1%[                    ] 303.75K  1.17MB/s                       /home/tca/s  14%[=>                  ]   3.28M  7.22MB/s                      /home/tca/sc  54%[=========>          ]  12.53M  18.6MB/s                     /home/tca/scr  97%[==================> ]  22.47M  25.8MB/s               /home/tca/scripts/u 100%[===================>]  23.08M  26.2MB/s    in 0.9s    
+
+2025-07-01 14:59:55 (26.2 MB/s) - ‘/home/tca/scripts/ubuntu-rescue-system/tools/downloads/supergrub2-2.06s4-multiarch-USB.img.zip’ saved [24206301/24206301]
+
+   ✅ Downloaded successfully
+   📁 Size: 24M
+
+🔧 Boot-Repair-Disk (Automated boot fixing)
+📥 Downloading Boot-Repair-Disk...
+   ✅ Already exists: boot-repair-disk-64bit.iso
+   📁 Size: 2.5G
+
+🚑 SystemRescue (Complete rescue toolkit)
+📥 Downloading SystemRescue...
+   🌐 URL: https://mirror.aarnet.edu.au/pub/systemrescue/releases/11.01/systemrescue-11.01-amd64.iso
+--2025-07-01 14:59:55--  https://mirror.aarnet.edu.au/pub/systemrescue/releases/11.01/systemrescue-11.01-amd64.iso
+Resolving mirror.aarnet.edu.au (mirror.aarnet.edu.au)... 202.158.214.106, 2001:388:30bc:cafe::beef
+Connecting to mirror.aarnet.edu.au (mirror.aarnet.edu.au)|202.158.214.106|:443... connected.
+HTTP request sent, awaiting response... 404 Not Found
+2025-07-01 14:59:58 ERROR 404: Not Found.
+
+   ❌ Download failed!
